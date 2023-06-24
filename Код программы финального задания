@@ -1,0 +1,43 @@
+Задача: Написать программу, которая из имеющегося массива строк формирует новый массив из строк, длина которых меньше, либо равна 3 символам. 
+Первоначальный массив можно ввести с клавиатуры, либо задать на старте выполнения алгоритма. 
+При решении не рекомендуется пользоваться коллекциями, лучше обойтись исключительно массивами.
+
+namespace program
+{
+    class Program {
+        static void Main(){
+        string[] FirstArray = new string[5] {"165", "73", "Okey", "world", "alt"};
+        string[] SecondArray = new string[FirstArray.Length];
+        Console.WriteLine("Первоначальный массив: ");
+        PrintArray(FirstArray);
+        NumbersTrueRequestsCheck(FirstArray, SecondArray);
+        Console.WriteLine("Вывод второго изменённого массива: ");
+        PrintArray(SecondArray); 
+        } 
+
+        static void NumbersTrueRequestsCheck(string[] FirstArray, string[] SecondArray)
+        {
+            int NumbersCounter = 0;
+            for (int i = 0; i < FirstArray.Length; i++)
+            {
+                    if(FirstArray[i].Length <= 3)
+                    {
+                            SecondArray[NumbersCounter] = FirstArray[i];
+                            NumbersCounter++;
+                    }
+            }
+        }
+
+        static void PrintArray(string[] Array)
+        {
+            for (int i = 0; i < Array.Length; i++)
+            {
+                Console.Write($"{Array[i]} ");
+            }
+
+        Console.WriteLine();
+        }
+
+    }
+
+}
